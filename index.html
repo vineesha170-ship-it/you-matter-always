@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twins Today ♡</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #444;
+    background: linear-gradient(-45deg, #ffd6ec, #d6f0ff, #ffe6fa, #e0f7ff);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    max-width: 700px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 25px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    animation: fadeIn 2s ease-in-out;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff4da6;
+}
+
+h2 {
+    color: #ff85c1;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+/* Fade */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating elements */
+.float {
+    position: absolute;
+    bottom: -60px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-120vh) scale(1.4); opacity: 0; }
+}
+
+/* Reminder button */
+.reminder-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ffb6d9;
+    color: #444;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.reminder-message {
+    margin-top: 15px;
+    color: #ff4da6;
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hi Jubie ♡</h1>
+    <h2>Twins Today. Twins Always.</h2>
+
+    <p>
+Just because today ends doesn't mean my love for you ever will.
+
+I pinkie promise to show you the same prema every day that I showed today.
+
+Thank you for being such an amazing friend and an amazing human.
+You mean so so so much to me.
+
+I hope that these small efforts I put in today to make your day better actually did make your day better.
+
+You're gonna be okay, kid.
+We are gonna be okay.
+
+Thanks for being you, twin.
+I'm so grateful we get to be twins.
+
+I love you.
+    </p>
+
+    <button class="reminder-btn" onclick="showReminder()">
+        Click if you need a reminder ♡
+    </button>
+
+    <div class="reminder-message" id="reminder">
+        You matter more than you know. And I'm never going anywhere. 💛
+    </div>
+
+    <!-- Spotify Embed -->
+    <iframe style="border-radius:12px; margin-top:20px;"
+    src="https://open.spotify.com/embed/track/1CZgbcEZEhHH28HcBFvQIW"
+    width="300"
+    height="80"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+</div>
+
+<script>
+// Floating generator
+function createFloating(symbol) {
+    const element = document.createElement("div");
+    element.classList.add("float");
+    element.innerHTML = symbol;
+    element.style.left = Math.random() * 100 + "vw";
+    element.style.fontSize = (Math.random() * 20 + 20) + "px";
+    element.style.animationDuration = (Math.random() * 6 + 6) + "s";
+    document.body.appendChild(element);
+
+    setTimeout(() => {
+        element.remove();
+    }, 12000);
+}
+
+setInterval(() => createFloating("♡"), 800);
+setInterval(() => createFloating("✨"), 1200);
+setInterval(() => createFloating("🧸"), 1500);
+
+function showReminder() {
+    document.getElementById("reminder").style.display = "block";
+}
+
+// Hidden twin message on click
+document.body.addEventListener("click", function() {
+    const hidden = document.createElement("div");
+    hidden.innerHTML = "I'm always on your team, twin 💞";
+    hidden.style.position = "fixed";
+    hidden.style.bottom = "20px";
+    hidden.style.left = "50%";
+    hidden.style.transform = "translateX(-50%)";
+    hidden.style.color = "#ff66b2";
+    hidden.style.fontSize = "14px";
+    hidden.style.opacity = "0.9";
+    document.body.appendChild(hidden);
+
+    setTimeout(() => {
+        hidden.remove();
+    }, 3000);
+});
+</script>
+
+</body>
+</html>
