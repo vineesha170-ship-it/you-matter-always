@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twins Today ♡</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(-45deg, #ffd6ec, #d6f0ff, #ffe6fa, #e0f7ff);
+    background-size: 400% 400%;
+    animation: bg 10s ease infinite;
+}
+
+@keyframes bg {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 20px;
+}
+
+h1 { color: #ff4da6; }
+h2 { color: #ff85c1; font-weight: normal; }
+
+p {
+    line-height: 1.8;
+    font-size: 16px;
+    white-space: pre-line;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #ffb6d9;
+    cursor: pointer;
+}
+
+#reminder {
+    margin-top: 15px;
+    display: none;
+    color: #ff4da6;
+}
+
+/* Floating */
+.float {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity:0;}
+    50% {opacity:1;}
+    100% {transform: translateY(-120vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Hi Jubie ♡</h1>
+<h2>Twins Today. Twins Always.</h2>
+
+<p>
+Just because today ends doesn't mean my love for you ever will.
+
+I pinkie promise to show you the same prema every day that I showed today.
+
+Thank you for being such an amazing friend and an amazing human.
+You mean so so so much to me.
+
+I hope that these small efforts I put in today to make your day better actually did make your day better.
+
+You're gonna be okay, kid.
+We are gonna be okay.
+
+Thanks for being you, twin.
+I'm so grateful we get to be twins.
+
+I love you.
+</p>
+
+<button onclick="showReminder()">Click if you need a reminder ♡</button>
+
+<div id="reminder">
+You matter more than you know. I'm never going anywhere 💛
+</div>
+
+<br><br>
+
+<!-- Spotify Player -->
+<iframe style="border-radius:12px"
+src="https://open.spotify.com/embed/track/1CZgbcEZEhHH28HcBFvQIW"
+width="300"
+height="80"
+frameborder="0"
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+</div>
+
+<script>
+function showReminder() {
+  document.getElementById("reminder").style.display = "block";
+}
+
+function createFloat(symbol) {
+  const el = document.createElement("div");
+  el.className = "float";
+  el.innerHTML = symbol;
+  el.style.left = Math.random()*100 + "vw";
+  el.style.fontSize = (20 + Math.random()*20) + "px";
+  el.style.animationDuration = (6 + Math.random()*4) + "s";
+  document.body.appendChild(el);
+  setTimeout(()=>{el.remove()},10000);
+}
+
+setInterval(()=>createFloat("♡"),800);
+setInterval(()=>createFloat("✨"),1200);
+setInterval(()=>createFloat("🧸"),1500);
+
+document.addEventListener("click", function() {
+  const msg = document.createElement("div");
+  msg.innerHTML = "I'm always on your team, twin 💞";
+  msg.style.position="fixed";
+  msg.style.bottom="20px";
+  msg.style.left="50%";
+  msg.style.transform="translateX(-50%)";
+  msg.style.background="white";
+  msg.style.padding="8px 15px";
+  msg.style.borderRadius="20px";
+  msg.style.color="#ff66b2";
+  msg.style.fontSize="14px";
+  document.body.appendChild(msg);
+  setTimeout(()=>msg.remove(),3000);
+});
+</script>
+
+</body>
+</html>
